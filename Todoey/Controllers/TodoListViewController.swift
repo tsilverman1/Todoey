@@ -23,7 +23,6 @@ class TodoListViewController: UITableViewController {
 
         let newItem = Item()
         newItem.title = "Find Mike"
-//        newItem.done = true
         itemArray.append(newItem)
 
         let newItem2 = Item()
@@ -34,6 +33,10 @@ class TodoListViewController: UITableViewController {
         newItem3.title = "Destroy Demogorgon"
         itemArray.append(newItem3)
 
+        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+            itemArray = items
+        }
+        
     }
     
     
